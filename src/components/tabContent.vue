@@ -16,10 +16,7 @@ export default {
   components: {
     'tab-tabel': tabTabel
   },
-  props: ['dataList'],
-  mounted() {
-    console.log(this.dataList)
-  }
+  props: ['dataList']
 }
 </script>
 

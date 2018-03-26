@@ -105,21 +105,23 @@ export default {
               }
             }
           })
-      }
+      };
       this.editableTabsValue = activeName;
       this.editableTabs = tabs.filter(tab => tab.name !== targetName);
     },
     getData() {
-      console.log('getData');
       var url = 'http://172.20.1.13:8081/redis/keys';
 
       this.$nextTick(() => {
-        this.$http('GET' , url).then((res) => {
+        this.$http('GET' , url)
+        .then((res) => {
           console.log(res);
           this.dataList = res.map((obj, i) => {
             return {value: obj}
           })
         })
+        .then(() => console.log('获取完成'))
+        .catch((err) => console.log(err))
       })
     }
   }
