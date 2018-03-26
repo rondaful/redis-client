@@ -40,6 +40,7 @@ window.obj2geturl = function (url, obj) {
 };
 
 function http(method, url, data, header  = {contentType:'application/x-www-form-urlencoded'}) {
+    url = `http://172.20.1.13:8081${url}`;
     data = data || {};
     return new Promise((succ,fail)=>{
         let req = null;
